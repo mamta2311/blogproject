@@ -11,7 +11,7 @@ const PostForm = (props) => {
         e.preventDefault();
         let post = {
             "id" : 6,
-            "title" : title,
+            "title" : postTitle,
             "textEdit" : textEdit
         }
         console.log(post);
