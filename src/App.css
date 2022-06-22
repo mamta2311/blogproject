@@ -13,6 +13,11 @@
   }
 }
 
+.myEditorCntr {
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+}
+
 .App-header {
   display: flex;
   flex-direction: row;

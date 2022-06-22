@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
 import { render } from 'react-dom';
-
+import {Editor, EditorState} from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
 const PostForm = (props) => {
     const [postTitle, setpostTitle] = useState('');
-    const [textEdit, settextEdit] = useState('');
+    const [textEdit, settextEdit] = React.useState(() => EditorState.createEmpty());
 
     const addPost = (e) =>{
         e.preventDefault();
@@ -29,8 +30,8 @@ const PostForm = (props) => {
   
     <Form.Group className="mb-3" controlId="formtextEdit">
       <Form.Label>Text Edit</Form.Label>
-      <Form.Control type="text" placeholder="Enter text Edit" value={textEdit}
-      onChange ={event=>settextEdit(event.target.value)}/>
+      <div className='myEditorCntr'>
+      <Editor editorState={textEdit} onChange={settextEdit} /></div>
     </Form.Group>
     <Button variant="primary" type="submit">
       Submit
